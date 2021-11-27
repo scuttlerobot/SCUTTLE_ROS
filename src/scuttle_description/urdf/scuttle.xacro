@@ -106,6 +106,8 @@
   <origin rpy="0 0 -1.570796" xyz="0.0 0.13695 0.031"/>
   <parent link="base_link"/>
   <child link="lidar_1"/>
+  <!-- <axis xyz="-0.0 -0.13695 -0.01"/> -->
+  <!-- <axis xyz="0.0 0.0 0.0"/> -->
 </joint>
 
 </robot>

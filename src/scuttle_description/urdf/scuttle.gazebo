@@ -70,20 +70,20 @@
     <!-- Odometry frame, defaults to `odom` -->
     <odometryFrame>odom</odometryFrame>
 
-    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
-    <robotBaseFrame>base_footprint</robotBaseFrame>
+    <!-- Robot frame to calculate odometry from, defaults to `base_link` -->
+    <robotBaseFrame>base_link</robotBaseFrame>
 
     <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
     <odometrySource>1</odometrySource>
 
     <!-- Set to true to publish transforms for the wheel links, defaults to false -->
-    <publishWheelTF>true</publishWheelTF>
+    <publishWheelTF>false</publishWheelTF>
 
     <!-- Set to true to publish transforms for the odometry, defaults to true -->
     <publishOdom>true</publishOdom>
 
     <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
-    <publishWheelJointState>true</publishWheelJointState>
+    <publishWheelJointState>false</publishWheelJointState>
 
     <!-- Set to true to swap right and left wheels, defaults to true -->
     <legacyMode>false</legacyMode>
@@ -94,9 +94,9 @@
   <gazebo reference="lidar_1">
     <sensor type="gpu_ray" name="head_hokuyo_sensor">
     <!-- <sensor type="ray" name="head_hokuyo_sensor"> -->
-      <!-- <pose>0 0 0 0 0 0</pose> -->
+      <pose>0 0 0 0 0 0</pose>
       <!-- <origin rpy="0 0 1" xyz="0.0 0 0"/> -->
-      <pose xyz="0 1 0" rpy="0 1 0" />
+      <!-- <pose xyz="0 1 0" rpy="0 1 0" /> -->
       <visualize>true</visualize>
       <update_rate>15</update_rate>
       <ray>

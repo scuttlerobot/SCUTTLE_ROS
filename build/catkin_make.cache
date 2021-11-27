@@ -1,2 +1,2 @@
-scuttle_description
+scuttle_description:slam_gmapping/gmapping:slam_gmapping/slam_gmapping
 -DCATKIN_DEVEL_PREFIX=/home/ros/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ros/catkin_ws/install -G Unix Makefiles

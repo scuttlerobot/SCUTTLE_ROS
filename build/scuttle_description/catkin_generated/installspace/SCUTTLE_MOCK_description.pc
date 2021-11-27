@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_ws/install
+
+Name: SCUTTLE_MOCK_description
+Description: Description of SCUTTLE_MOCK_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

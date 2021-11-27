@@ -1,4 +1,4 @@
-prefix=/home/ros/catkin_ws/devel
+prefix=/home/ros/scuttle_ws/devel
 
 Name: scuttle_description
 Description: Description of scuttle_description

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ros/catkin_ws/src/scuttle_description
+# Install script for directory: /home/ros/scuttle_ws/src/scuttle_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ros/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/scuttle_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/catkin_ws/build/scuttle_description/catkin_generated/installspace/scuttle_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/scuttle_ws/build/scuttle_description/catkin_generated/installspace/scuttle_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scuttle_description/cmake" TYPE FILE FILES
-    "/home/ros/catkin_ws/build/scuttle_description/catkin_generated/installspace/scuttle_descriptionConfig.cmake"
-    "/home/ros/catkin_ws/build/scuttle_description/catkin_generated/installspace/scuttle_descriptionConfig-version.cmake"
+    "/home/ros/scuttle_ws/build/scuttle_description/catkin_generated/installspace/scuttle_descriptionConfig.cmake"
+    "/home/ros/scuttle_ws/build/scuttle_description/catkin_generated/installspace/scuttle_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scuttle_description" TYPE FILE FILES "/home/ros/catkin_ws/src/scuttle_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scuttle_description" TYPE FILE FILES "/home/ros/scuttle_ws/src/scuttle_description/package.xml")
 endif()
 

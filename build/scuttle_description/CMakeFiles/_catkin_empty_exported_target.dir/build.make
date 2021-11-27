@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/ros/scuttle_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/catkin_ws/build
+CMAKE_BINARY_DIR = /home/ros/scuttle_ws/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_
 .PHONY : scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/ros/catkin_ws/build/scuttle_description && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/ros/scuttle_ws/build/scuttle_description && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/catkin_ws/src /home/ros/catkin_ws/src/scuttle_description /home/ros/catkin_ws/build /home/ros/catkin_ws/build/scuttle_description /home/ros/catkin_ws/build/scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/scuttle_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/scuttle_ws/src /home/ros/scuttle_ws/src/scuttle_description /home/ros/scuttle_ws/build /home/ros/scuttle_ws/build/scuttle_description /home/ros/scuttle_ws/build/scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : scuttle_description/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

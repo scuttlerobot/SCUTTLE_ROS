@@ -1,4 +1,4 @@
-prefix=/home/ros/catkin_ws/install
+prefix=/home/ros/scuttle_ws/install
 
 Name: scuttle_description
 Description: Description of scuttle_description

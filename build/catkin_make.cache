@@ -1,2 +1,0 @@
-scuttle_description
--DCATKIN_DEVEL_PREFIX=/home/ros/scuttle_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ros/scuttle_ws/install -G Unix Makefiles

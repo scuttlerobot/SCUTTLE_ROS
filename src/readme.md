@@ -1,0 +1,1 @@
+This is a guide for setting up a fresh catkin workspace

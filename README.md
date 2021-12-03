@@ -3,6 +3,9 @@ SCUTTLE ROS
 
 Ros Installation Guide for Rosberry PI Setup by Christian (Resgreen Group) - These are my notes of how to do my setup. It's messy and not for the faint of heart yet.
 Notes: This applies to Raspberry Pi 4 devices. I'm testing on Rpi4 8Gb but others should be the same. This setup is different from usual ros due to quirks of rpi and building ros differently.
+
+PREREQ: This requires raspbian buster (you can get this in raspi imager tool for windows in gui or lite form)
+
 1. Setup ROS Repositories
 - Install the repo key for ros and update apt
 ```

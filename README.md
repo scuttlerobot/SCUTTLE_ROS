@@ -48,3 +48,50 @@ rosdep install --from-paths src --ignore-src --rosdistro melodic -y -r --os=debi
 sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/melodic
 source /opt/ros/melodic/setup.bash
 ```
+
+*Optional Scripting for Auto Start*
+Assuming you made a catkin_ws (NOT the same as ros_catkin_ws) and followed the setup for the scuttle and two_wheel_driver packages.
+1. Script in .bashrc to set enviroment variables based on your robots IP address. This is to point all ros nodes to roscore running on your robot. If you want to access the robot with a remote laptop you would connect to the robots ROS_MASTER_URI. The script below sets the IP for roscore on the robot.
+```
+cd
+nano .bashrc
+# scroll way way down to the bottom and add the following
+source /opt/ros/melodic/setup.bash
+source /home/pi/catkin_ws/devel/setup.bash
+begin="http://"
+ip=$(hostname -I)
+ip2=${ip::-1}
+port=":11311"
+export ROS_MASTER_URI=$begin$ip2$port
+export ROS_IP=$ip2
+```
+exit the terminal and reconnect via ssh. To check if this worked run the following to see your Master URI and IP variables
+```
+echo $ROS_MASTER_URI
+echo $ROS_IP
+```
+both should have the same IP address but look different. One is a full web address with a port for the ros master. The other is just your devices IP.
+To connect with a remote laptop on the same network you would set the laptops ROS_MASTER_URI the same as the robots, but set the ROS_IP as the laptops ip.
+
+2. Script to set ROS_MASTER_URI and ROS_IP and launch roscore on boot
+Notes: This creates a service in /etc/init.d/
+```
+sudo nano /etc/init.d/rosstart.sh
+# Add the following content to the file
+
+#!/bin/bash
+begin="http://"
+ip=$(hostname -I)
+ip2=${ip::-1}
+port=":11311"
+export ROS_MASTER_URI=$begin$ip2$port
+export ROS_IP=$ip2
+roscore
+```
+Next we need to make the OS aware of the new script and make it executable
+```
+chmod +x /etc/init.d/rosstart.sh
+sudo update-rc.d rosstart.sh defaults
+```
+
+test it with a reboot!

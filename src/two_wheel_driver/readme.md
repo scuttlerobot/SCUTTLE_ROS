@@ -33,7 +33,7 @@ mkdir scripts
 cd scripts
 touch cmd_vel_sub.py
 chmod +x cmd_vel_sub.py
-cd /~/catkin_ws
+cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```

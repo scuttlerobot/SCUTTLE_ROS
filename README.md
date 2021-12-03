@@ -38,7 +38,7 @@ source /opt/ros/melodic/setup.bash
 3. Add more standard packages now that the base is installed
 - Pick out new packages to install, but you MUST include the old ones as well! We are gonna add teleop_twist_keyboard, teleop_twist_joy, ros_control, joystick_drivers, robot_state_publisher and joint_state_publisher
 ```
-rosinstall_generator ros_comm teleop_twist_keyboard teleop_twist_joy ros_control joystick_drivers robot_state_publisher joint_state_publisher --rosdistro melodic --deps --wet-only --tar > melodic-custom_ros.rosinstall
+rosinstall_generator ros_comm ros_control joystick_drivers robot_state_publisher joint_state_publisher teleop_twist_keyboard teleop_twist_joy --rosdistro melodic --deps --wet-only --tar > melodic-custom_ros.rosinstall 
 wstool merge -t src melodic-custom_ros.rosinstall
 wstool update -t src
 rosdep install --from-paths src --ignore-src --rosdistro melodic -y -r --os=debian:buster

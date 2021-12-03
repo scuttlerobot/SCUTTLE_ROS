@@ -80,6 +80,8 @@ sudo nano /etc/init.d/rosstart.sh
 # Add the following content to the file
 
 #!/bin/bash
+source /opt/ros/melodic/setup.bash
+source /home/pi/catkin_ws/devel/setup.bash
 begin="http://"
 ip=$(hostname -I)
 ip2=${ip::-1}

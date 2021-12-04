@@ -1,4 +1,5 @@
-<?xml version="1.0" ?> <robot name="scuttle" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<?xml version="1.0" ?>
+<robot name="scuttle" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
@@ -50,17 +51,18 @@
 
 <gazebo reference="l_caster_wheel_1">
   <material>${body_color}</material>
-  <mu1>0.3</mu1>
-  <mu2>0.3</mu2>
+  <mu1>0.4</mu1>
+  <mu2>0.4</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="r_caster_wheel_1">
   <material>${body_color}</material>
-  <mu1>0.3</mu1>
-  <mu2>0.3</mu2>
+  <mu1>0.4</mu1>
+  <mu2>0.4</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
+
 
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">

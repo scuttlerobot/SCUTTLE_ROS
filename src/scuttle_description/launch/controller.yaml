@@ -5,11 +5,31 @@ scuttle_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Rev1_position_controller:
+  l_wheel_joint_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev1
+    joint: l_wheel_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Rev2_position_controller:
+  r_wheel_joint_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev2
+    joint: r_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  lidar_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: lidar
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  r_caster_swivel_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_caster_swivel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  l_caster_swivel_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_caster_swivel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  r_caster_wheel_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_caster_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  l_caster_wheel_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: l_caster_wheel_joint
     pid: {p: 100.0, i: 0.01, d: 10.0}

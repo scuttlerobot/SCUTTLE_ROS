@@ -1,76 +1,84 @@
-<?xml version="1.0" ?>
-<robot name="scuttle" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<?xml version="1.0" ?> <robot name="scuttle" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="silver" value="Gazebo/Silver" />
-<xacro:property name="blue" value="Gazebo/Blue" />
-<xacro:property name="gray" value="Gazebo/Gray" />
-<xacro:property name="black" value="Gazebo/Black" />
-
-<xacro:property name="update_rate" value="100" />
+<xacro:property name="body_color" value="Gazebo/Silver" />
 
 <gazebo>
   <plugin filename="libgazebo_ros_control.so" name="control"/>
 </gazebo>
 <gazebo reference="base_link">
-  <material>${silver}</material>
+  <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
   <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="lidar_base_1">
-  <material>${gray}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
-<gazebo reference="lidar_top_1">
-  <material>${black}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
-<gazebo reference="caster_1">
-  <material>${gray}</material>
-  <mu1>0.01</mu1>
-  <mu2>0.01</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
-<gazebo reference="left_wheel_1">
-  <material>${blue}</material>
+<gazebo reference="l_wheel_1">
+  <material>${body_color}</material>
   <mu1>0.9</mu1>
   <mu2>0.9</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="right_wheel_1">
-  <material>${blue}</material>
+<gazebo reference="r_wheel_1">
+  <material>${body_color}</material>
   <mu1>0.9</mu1>
   <mu2>0.9</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
+
+<gazebo reference="LiDAR_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="r_caster_swivel_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="l_caster_swivel_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="l_caster_wheel_1">
+  <material>${body_color}</material>
+  <mu1>0.3</mu1>
+  <mu2>0.3</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="r_caster_wheel_1">
+  <material>${body_color}</material>
+  <mu1>0.3</mu1>
+  <mu2>0.3</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
 <gazebo>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
 
     <!-- Plugin update rate in Hz -->
-    <!-- <updateRate>${update_rate}</updateRate> -->
-    <updateRate>100</updateRate>
+    <updateRate>50</updateRate>
 
     <!-- Name of left joint, defaults to `left_joint` -->
-    <leftJoint>Rev1</leftJoint>
+    <leftJoint>l_wheel_joint</leftJoint>
 
     <!-- Name of right joint, defaults to `right_joint` -->
-    <rightJoint>Rev2</rightJoint>
+    <rightJoint>r_wheel_joint</rightJoint>
 
     <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
-    <wheelSeparation>0.3550</wheelSeparation>
+    <wheelSeparation>0.355</wheelSeparation>
 
     <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
-    <wheelDiameter>0.0844</wheelDiameter>
+    <wheelDiameter>0.0833</wheelDiameter>
 
     <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
     <wheelAcceleration>9.6</wheelAcceleration>
@@ -87,44 +95,44 @@
     <!-- Odometry frame, defaults to `odom` -->
     <odometryFrame>odom</odometryFrame>
 
-    <!-- Robot frame to calculate odometry from, defaults to `base_link` -->
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
     <robotBaseFrame>base_link</robotBaseFrame>
 
     <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
     <odometrySource>1</odometrySource>
 
     <!-- Set to true to publish transforms for the wheel links, defaults to false -->
-    <publishWheelTF>false</publishWheelTF>
+    <publishWheelTF>true</publishWheelTF>
 
     <!-- Set to true to publish transforms for the odometry, defaults to true -->
     <publishOdom>true</publishOdom>
 
     <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
-    <publishWheelJointState>false</publishWheelJointState>
+    <publishWheelJointState>true</publishWheelJointState>
 
     <!-- Set to true to swap right and left wheels, defaults to true -->
     <legacyMode>false</legacyMode>
   </plugin>
 </gazebo>
   <!-- hokuyo -->
-  <gazebo reference="lidar_top_1">
+  <gazebo reference="LiDAR_1">
     <sensor type="gpu_ray" name="head_hokuyo_sensor">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
-      <update_rate>15</update_rate>
+      <pose>0 0 0.01 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>5.5</update_rate>
       <ray>
         <scan>
           <horizontal>
-            <samples>810</samples>
-            <resolution>0.333</resolution>
-            <min_angle>2.356194490192345</min_angle>
-            <max_angle>7.0685834705770345</max_angle>
+            <samples></samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>6.283185307179586</max_angle>
           </horizontal>
         </scan>
         <range>
-          <min>0.04</min>
-          <max>15.0</max>
-          <resolution>0.01</resolution>
+          <min>0.15</min>
+          <max>12.0</max>
+          <resolution>0.005</resolution>
         </range>
         <noise>
           <type>gaussian</type>
@@ -138,7 +146,7 @@
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
         <topicName>/scan</topicName>
-        <frameName>lidar_top_1</frameName>
+        <frameName>LiDAR_1</frameName>
       </plugin>
     </sensor>
   </gazebo>

@@ -40,7 +40,7 @@ r = rospy.Rate(10)
 
 bus=smbus2.SMBus(1) # declare the i2c bus object
 
-encL = 0x40         # encoder i2c address for LEFT motor
+encL = 0x43         # encoder i2c address for LEFT motor
 encR = 0x41         # encoder i2c address for RIGHT motor (this encoder has A1 pin pulled high)
 def singleReading(encoderSelection):                                            # return a reading for an encoder in degrees (motor shaft angle)
     try:

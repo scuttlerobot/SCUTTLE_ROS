@@ -1,0 +1,3 @@
+[submodule "src/scuttle_descripton"]
+	path = src/scuttle_descripton
+	url = https://github.com/scuttlerobot/scuttle_description

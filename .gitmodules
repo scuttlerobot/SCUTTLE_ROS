@@ -3,4 +3,4 @@
 	url = https://github.com/scuttlerobot/scuttle_description
 [submodule "src/rplidar_ros"]
 	path = src/rplidar_ros
-	url = https://github.com/Slamtec/rplidar_ros
+	url = https://github.com/robopeak/rplidar_ros

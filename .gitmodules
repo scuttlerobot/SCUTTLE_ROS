@@ -1,3 +1,9 @@
 [submodule "src/scuttle_descripton"]
 	path = src/scuttle_descripton
 	url = https://github.com/scuttlerobot/scuttle_description
+[submodule "src/src/rplidar_ros"]
+	path = src/src/rplidar_ros
+	url = https://github.com/Slamtec/rplidar_ros
+[submodule "src/rplidar_ros"]
+	path = src/rplidar_ros
+	url = https://github.com/Slamtec/rplidar_ros

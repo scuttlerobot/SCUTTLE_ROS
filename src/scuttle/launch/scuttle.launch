@@ -17,4 +17,7 @@
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
+	<node name="cmd_vel_sub" pkg="two_wheel_driver" type="cmd_vel_sub.py" output="screen"/>
+	<node name="odom_publisher" pkg="two_wheel_driver" type="odom_publisher.py" output="screen"/>
+
 </launch>

@@ -2,8 +2,11 @@
 
 import tf
 import rospy
+import numpy as np
 from nav_msgs.msg import Odometry
+from sensor_msgs.msg import JointState
 from geometry_msgs.msg import Point, Pose, Quaternion, Twist, Vector3
+from std_msgs.msg import Header
 from scuttlepy import SCUTTLE
 
 def commandVelocity(msg):
@@ -53,12 +56,43 @@ if __name__=="__main__":
 
             odom_pub.publish(odom)
 
+            myJointStatePublisher = rospy.Publisher('joint_states', JointState, queue_size=10)
+            # pub = rospy.Publisher('joint_states', JointState, queue_size=10)
+            # rospy.init_node('joint_state_publisher')
+            jointState = JointState()
+
+            jointState.header = Header()
+
+            jointState.header.stamp = rospy.Time.now()
+
+            jointState.name = ['l_wheel_joint',
+                               'r_wheel_joint',
+                               'r_caster_swivel_joint',
+                               'l_caster_swivel_joint',
+                               'r_caster_wheel_joint',
+                               'l_caster_wheel_joint'
+                              ]
+
+            jointState.position = [scuttle.leftWheel.encoder.position * ((2 * np.pi) / scuttle.leftWheel.encoder.resolution),
+                                   scuttle.leftWheel.encoder.position * ((2 * np.pi) / scuttle.leftWheel.encoder.resolution),
+                                   0,
+                                   0,
+                                   0,
+                                   0
+                                  ]
+
+            jointState.velocity = []
+            jointState.effort = []
+            myJointStatePublisher.publish(jointState)
+
             r.sleep()
 
-    except KeyboardInterrupt:
-
+    except rospy.ROSInterruptException:
         pass
 
-    finally:
+    except KeyboardInterrupt:
+        print('Stopping...')
+        # pass
 
+    finally:
         scuttle.stop()

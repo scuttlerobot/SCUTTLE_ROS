@@ -74,7 +74,7 @@ if __name__=="__main__":
                               ]
 
             jointState.position = [scuttle.leftWheel.encoder.position * ((2 * np.pi) / scuttle.leftWheel.encoder.resolution),
-                                   scuttle.leftWheel.encoder.position * ((2 * np.pi) / scuttle.leftWheel.encoder.resolution),
+                                   scuttle.rightWheel.encoder.position * ((2 * np.pi) / scuttle.rightWheel.encoder.resolution),
                                    0,
                                    0,
                                    0,

@@ -10,3 +10,6 @@
 [submodule "src/teleop_twist_joy"]
 	path = src/teleop_twist_joy
 	url = https://github.com/scuttlerobot/teleop_twist_joy
+[submodule "src/scuttle_bringup"]
+	path = src/scuttle_bringup
+	url = https://github.com/scuttlerobot/scuttle_bringup

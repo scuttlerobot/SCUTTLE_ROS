@@ -4,3 +4,9 @@
 [submodule "src/scuttle_description"]
 	path = src/scuttle_description
 	url = https://github.com/scuttlerobot/scuttle_description
+[submodule "src/scuttle_driver"]
+	path = src/scuttle_driver
+	url = https://github.com/scuttlerobot/scuttle_driver
+[submodule "src/teleop_twist_joy"]
+	path = src/teleop_twist_joy
+	url = https://github.com/scuttlerobot/teleop_twist_joy

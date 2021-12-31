@@ -51,7 +51,7 @@ At this point you need to edit the created launch file with the code below. Ill 
 	
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-	<node name="cmd_vel_sub" pkg="two_wheel_driver" type="cmd_vel_sub.py" output="screen"/>
+	<node name="cmd_vel_sub" pkg="scuttle_driver" type="cmd_vel_sub.py" output="screen"/>
 
 	<include file="$(find rplidar_ros)/launch/rplidar.launch" />
 </launch>
@@ -61,7 +61,7 @@ The launch file will run nodes and other packages in a top down order. So first 
 
 next the joint state publisher and the robot state publisher publish data from our urdf and sensors to the TF. Dont worry about this for now.
 
-then we see a node that launches our driving script. This is loaded from the two_wheel_driver package and run along with all of the other programs.
+then we see a node that launches our driving script. This is loaded from the scuttle_driver package and run along with all of the other programs.
 
 finally we launch the rplidar node and we are all set for now.
 

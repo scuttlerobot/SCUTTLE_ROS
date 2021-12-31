@@ -50,7 +50,7 @@ source /opt/ros/melodic/setup.bash
 ```
 
 *Optional Scripting for Auto Start*
-Assuming you made a catkin_ws (NOT the same as ros_catkin_ws) and followed the setup for the scuttle and two_wheel_driver packages.
+Assuming you made a catkin_ws (NOT the same as ros_catkin_ws) and followed the setup for the scuttle and scuttle_driver packages.
 1. Script in .bashrc to set enviroment variables based on your robots IP address. This is to point all ros nodes to roscore running on your robot. If you want to access the robot with a remote laptop you would connect to the robots ROS_MASTER_URI. The script below sets the IP for roscore on the robot.
 ```
 cd

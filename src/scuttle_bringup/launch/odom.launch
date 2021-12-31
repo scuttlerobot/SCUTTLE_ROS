@@ -7,6 +7,6 @@
         <rosparam param="base_width">0.355</rosparam>
     </node>
 
-	<!-- <node name="cmd_vel_sub" pkg="two_wheel_driver" type="cmd_vel_sub.py" output="screen"/> -->
+	<!-- <node name="cmd_vel_sub" pkg="scuttle_driver" type="cmd_vel_sub.py" output="screen"/> -->
 
 </launch>

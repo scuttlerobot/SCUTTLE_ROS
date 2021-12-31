@@ -100,8 +100,8 @@ test it with a reboot!
 
 ## Install
 ```
-git clone https://github.com/scuttlerobot/SCUTTLE_ROS/
+git clone --recursive https://github.com/scuttlerobot/SCUTTLE_ROS/
 cd SCUTTLE_ROS
-git submodule update --init --recursive
+# git submodule update --init --recursive
 catkin_make
 ```

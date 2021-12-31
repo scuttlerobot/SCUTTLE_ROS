@@ -5,6 +5,6 @@
 	<param name="robot_description" command="cat $(find scuttle_description)/urdf/scuttle.xacro" />
 	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
 	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
-	<node name="cmd_vel_sub" pkg="scuttle_driver" type="cmd_vel_sub.py" output="screen"/>
+	<node name="scuttle_driver" pkg="scuttle_driver" type="scuttle_driver.py" output="screen"/>
 	<include file="$(find rplidar_ros)/launch/rplidar.launch" />
 </launch>

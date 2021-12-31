@@ -1,6 +1,6 @@
 [submodule "src/rplidar_ros"]
 	path = src/rplidar_ros
-	url = https://github.com/robopeak/rplidar_ros
+	url = https://github.com/scuttlerobot/rplidar_ros
 [submodule "src/scuttle_description"]
 	path = src/scuttle_description
 	url = https://github.com/scuttlerobot/scuttle_description

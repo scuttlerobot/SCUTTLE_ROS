@@ -2,8 +2,7 @@
 
 ## Install
 ```
-git clone --recursive https://github.com/scuttlerobot/SCUTTLE_ROS/
-cd SCUTTLE_ROS
-# git submodule update --init --recursive
+git clone --recursive -b noetic https://github.com/scuttlerobot/SCUTTLE_ROS/ scuttle_ws
+cd scuttle_ws
 catkin_make
 ```

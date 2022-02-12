@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>scuttle_navigation</name>
+  <version>0.0.1</version>
+  <description>
+    The scuttle_navigation provides roslaunch scripts for navigation.
+  </description>
+  <license>Apache 2.0</license>
+  <maintainer email="daniyal.s.ansari@gmail.com">Daniyal Ansari</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>amcl</exec_depend>
+  <exec_depend>map_server</exec_depend>
+  <exec_depend>move_base</exec_depend>
+</package>

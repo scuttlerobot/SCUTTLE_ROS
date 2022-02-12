@@ -2,9 +2,12 @@
   <!-- Arguments -->
   <arg name="open_rviz" default="true"/>
   <arg name="move_forward_only" default="false"/>
-  <arg name="map_file" default="$(find scuttle_navigation)/maps/thompson_001_0.05cm.yaml"/>
+  <arg name="map_file" default="$(find scuttle_navigation)/maps/house_map.yaml"/>
 
-  <!-- Really Useful Robot -->
+  <!-- SCUTTLE -->
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
@@ -18,10 +21,9 @@
   </include>
 
   <!-- rviz -->
-  <group if="$(arg open_rviz)"> 
+  <group if="$(arg open_rviz)">
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find scuttle_navigation)/rviz/scuttle_navigation.rviz"/>
   </group>
-  
-</launch>
 
+</launch>

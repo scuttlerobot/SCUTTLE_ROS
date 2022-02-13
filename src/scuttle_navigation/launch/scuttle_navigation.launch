@@ -5,7 +5,8 @@
   <arg name="map_file" default="$(find scuttle_navigation)/maps/house_map.yaml"/>
 
   <!-- SCUTTLE -->
-
+  <arg default="$(find scuttle_description)/urdf/scuttle.xacro" name="model"/>
+  <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 

@@ -84,7 +84,7 @@ if __name__=="__main__":
                                     0, 0, 0, 0, 0, 0.1]
 
             odom.child_frame_id = "base_link"
-            odom.twist.twist = Twist(Vector3(0, vx, 0), Vector3(0, 0, 0))
+            odom.twist.twist = Twist(Vector3(vx, 0, 0), Vector3(0, 0, 0))
 
             odom_pub.publish(odom)
 
